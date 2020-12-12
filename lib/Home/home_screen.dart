@@ -269,32 +269,137 @@ class Home extends StatelessWidget {
                     width: screenSize.width,
                     color: Colors.grey[300],
                   ),
-                  Container(
-                    width: screenSize.width,
-                    color: Colors.red,
-                    child: Image(
-                      image: NetworkImage(
-                        'https://avatars1.githubusercontent.com/u/41515472?s=460&u=2e83d208268b51f32d5212de73328a501ecd4ce5&v=4',
+                  Column(
+                    children: <Widget>[
+                      ListTile(
+                        leading: Container(
+                          width: screenSize.height * 0.05,
+                          height: screenSize.height * 0.05,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(screenSize.height * 0.05 / 2),
+                            border: Border.all(
+                              color: Colors.purple[500],
+                              width: 2,
+                            ),
+                            image: DecorationImage(
+                              image: NetworkImage(
+                                'https://avatars1.githubusercontent.com/u/41515472?s=460&u=2e83d208268b51f32d5212de73328a501ecd4ce5&v=4',
+                              ),
+                              fit: BoxFit.cover,
+                            ),
+                            color: Colors.orange,
+                          ),
+                        ),
+                        title: Text(
+                          'ankushchavan__',
+                          style: TextStyle(
+                            fontSize: screenSize.width * 0.045,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        trailing: Icon(
+                          Icons.more_vert,
+                          size: screenSize.width * 0.065,
+                          color: Colors.black,
+                        ),
                       ),
-                    ),
-                  ),
-                  Container(
-                    width: screenSize.width,
-                    color: Colors.red,
-                    child: Image(
-                      image: NetworkImage(
-                        'https://avatars1.githubusercontent.com/u/41515472?s=460&u=2e83d208268b51f32d5212de73328a501ecd4ce5&v=4',
+                      Container(
+                        width: screenSize.width,
+                        color: Colors.red,
+                        child: Image(
+                          image: NetworkImage(
+                            'https://avatars1.githubusercontent.com/u/41515472?s=460&u=2e83d208268b51f32d5212de73328a501ecd4ce5&v=4',
+                          ),
+                        ),
                       ),
-                    ),
-                  ),
-                  Container(
-                    width: screenSize.width,
-                    color: Colors.red,
-                    child: Image(
-                      image: NetworkImage(
-                        'https://avatars1.githubusercontent.com/u/41515472?s=460&u=2e83d208268b51f32d5212de73328a501ecd4ce5&v=4',
+                      Container(
+                        child: Padding(
+                          padding: EdgeInsets.fromLTRB(screenSize.width * 0.035, screenSize.width * 0.025, screenSize.width * 0.035, screenSize.width * 0.025),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: <Widget>[
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: <Widget>[
+                                  Row(
+                                    children: <Widget>[
+                                      FaIcon(
+                                        FontAwesomeIcons.heart,
+                                        size: screenSize.width * 0.08,
+                                      ),
+                                      SizedBox(
+                                        width: screenSize.width * 0.025,
+                                      ),
+                                      Container(
+                                        height: screenSize.width * 0.08,
+                                        child: Image.asset(
+                                          'assets/logo/instagram_comment_icon.png',
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        width: screenSize.width * 0.025,
+                                      ),
+                                      Container(
+                                        height: screenSize.width * 0.08,
+                                        child: Image.asset(
+                                          'assets/logo/instagram_share_icon.png',
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  FaIcon(
+                                    FontAwesomeIcons.bookmark,
+                                    size: screenSize.width * 0.08,
+                                  ),
+                                ],
+                              ),
+                              SizedBox(
+                                height: screenSize.height * 0.008,
+                              ),
+                              Text(
+                                '221 likes',
+                                style: TextStyle(
+                                  fontSize: screenSize.height * 0.023,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              RichText(
+                                text: new TextSpan(
+                                  style: new TextStyle(
+                                    fontSize: screenSize.height * 0.023,
+                                    color: Colors.black,
+                                  ),
+                                  children: <TextSpan>[
+                                    new TextSpan(text: 'ankushchavan__ ', style: new TextStyle(fontWeight: FontWeight.bold)),
+                                    new TextSpan(text: 'At Grand Hyatt, Santacruize, Mumbai'),
+                                  ],
+                                ),
+                              ),
+                              SizedBox(
+                                height: screenSize.height * 0.008,
+                              ),
+                              Text(
+                                'View all 12 comments',
+                                style: TextStyle(
+                                  fontSize: screenSize.height * 0.023,
+                                  color: Colors.grey,
+                                ),
+                              ),
+                              SizedBox(
+                                height: screenSize.height * 0.008,
+                              ),
+                              Text(
+                                '10 December 2019',
+                                style: TextStyle(
+                                  fontSize: screenSize.height * 0.018,
+                                  color: Colors.grey,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
                       ),
-                    ),
+                    ],
                   ),
                 ],
               ),
