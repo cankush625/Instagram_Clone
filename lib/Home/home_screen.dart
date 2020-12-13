@@ -12,13 +12,13 @@ class Home extends StatelessWidget {
           children: <Widget>[
             Image.asset(
               'assets/logo/instagram_camera_icon.jpg',
-              height: screenSize.height * 0.055,
+              height: screenSize.height * 0.045,
             ),
             Padding(
               padding: EdgeInsets.fromLTRB(screenSize.height * 0.01, screenSize.height * 0.005, 0, 0),
               child: Image.asset(
                 'assets/logo/instagram_appbar_icon.png',
-                height: screenSize.height * 0.055,
+                height: screenSize.height * 0.045,
               ),
             ),
           ],
@@ -26,11 +26,11 @@ class Home extends StatelessWidget {
         actions: <Widget>[
           Center(
             child: Padding(
-              padding: EdgeInsets.only(right: screenSize.width * 0.02),
+              padding: EdgeInsets.only(right: screenSize.width * 0.03),
               child: FaIcon(
                 FontAwesomeIcons.facebookMessenger,
                 color: Colors.black,
-                size: 30,
+                size: 25,
               ),
             ),
           ),
@@ -325,13 +325,13 @@ class Home extends StatelessWidget {
                                     children: <Widget>[
                                       FaIcon(
                                         FontAwesomeIcons.heart,
-                                        size: screenSize.width * 0.08,
+                                        size: screenSize.width * 0.06,
                                       ),
                                       SizedBox(
                                         width: screenSize.width * 0.025,
                                       ),
                                       Container(
-                                        height: screenSize.width * 0.08,
+                                        height: screenSize.width * 0.06,
                                         child: Image.asset(
                                           'assets/logo/instagram_comment_icon.png',
                                         ),
@@ -340,7 +340,7 @@ class Home extends StatelessWidget {
                                         width: screenSize.width * 0.025,
                                       ),
                                       Container(
-                                        height: screenSize.width * 0.08,
+                                        height: screenSize.width * 0.06,
                                         child: Image.asset(
                                           'assets/logo/instagram_share_icon.png',
                                         ),
@@ -349,7 +349,7 @@ class Home extends StatelessWidget {
                                   ),
                                   FaIcon(
                                     FontAwesomeIcons.bookmark,
-                                    size: screenSize.width * 0.08,
+                                    size: screenSize.width * 0.06,
                                   ),
                                 ],
                               ),
@@ -405,6 +405,45 @@ class Home extends StatelessWidget {
               ),
             ),
           ],
+        ),
+      ),
+      bottomNavigationBar: Container(
+        height: screenSize.height * 0.065,
+        decoration: BoxDecoration(
+          border: Border(
+            top: BorderSide(
+              color: Colors.grey[300],
+              width: screenSize.width * 0.006,
+            ),
+          ),
+        ),
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: screenSize.width * 0.05),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              Icon(
+                Icons.home,
+                size: screenSize.width * 0.07,
+              ),
+              Icon(
+                Icons.search,
+                size: screenSize.width * 0.07,
+              ),
+              FaIcon(
+                FontAwesomeIcons.plusSquare,
+                size: screenSize.width * 0.06,
+              ),
+              FaIcon(
+                FontAwesomeIcons.heart,
+                size: screenSize.width * 0.06,
+              ),
+              Icon(
+                Icons.account_circle,
+                size: screenSize.width * 0.07,
+              ),
+            ],
+          ),
         ),
       ),
     );
