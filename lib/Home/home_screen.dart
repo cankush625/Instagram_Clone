@@ -47,7 +47,6 @@ class _HomeState extends State<Home> {
           ),
         ],
         backgroundColor: Colors.white,
-//        elevation: 0,
       ),
       body: SafeArea(
         child: Column(
@@ -477,24 +476,25 @@ class _HomeState extends State<Home> {
                 FontAwesomeIcons.heart,
                 size: screenSize.width * 0.06,
               ),
-              Container(
-                width: screenSize.height * 0.035,
-                height: screenSize.height * 0.035,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(screenSize.height * 0.07 / 2),
-                  image: DecorationImage(
-                    image: NetworkImage(
-                      'https://avatars1.githubusercontent.com/u/41515472?s=460&u=2e83d208268b51f32d5212de73328a501ecd4ce5&v=4',
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context, 'profile');
+                },
+                child: Container(
+                  width: screenSize.height * 0.035,
+                  height: screenSize.height * 0.035,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(screenSize.height * 0.07 / 2),
+                    image: DecorationImage(
+                      image: NetworkImage(
+                        'https://avatars1.githubusercontent.com/u/41515472?s=460&u=2e83d208268b51f32d5212de73328a501ecd4ce5&v=4',
+                      ),
+                      fit: BoxFit.cover,
                     ),
-                    fit: BoxFit.cover,
+                    color: Colors.orange,
                   ),
-                  color: Colors.orange,
                 ),
               ),
-//              Icon(
-//                Icons.account_circle,
-//                size: screenSize.width * 0.07,
-//              ),
             ],
           ),
         ),
