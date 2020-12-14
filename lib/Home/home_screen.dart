@@ -19,6 +19,7 @@ class _HomeState extends State<Home> {
     var screenSize = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: Row(
           children: <Widget>[
             Image.asset(
@@ -451,7 +452,7 @@ class _HomeState extends State<Home> {
           border: Border(
             top: BorderSide(
               color: Colors.grey[300],
-              width: screenSize.width * 0.006,
+              width: screenSize.width * 0.003,
             ),
           ),
         ),
@@ -460,9 +461,14 @@ class _HomeState extends State<Home> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              Icon(
-                Icons.home,
-                size: screenSize.width * 0.07,
+              GestureDetector(
+                child: Icon(
+                  Icons.home,
+                  size: screenSize.width * 0.07,
+                ),
+                onTap: () {
+                  Navigator.pushReplacementNamed(context, '/');
+                },
               ),
               Icon(
                 Icons.search,
@@ -478,7 +484,12 @@ class _HomeState extends State<Home> {
               ),
               GestureDetector(
                 onTap: () {
-                  Navigator.pushNamed(context, 'profile');
+                  fsconnect.collection('userProfile').doc("oQ5FBdRIQU2xqZwaXHmR").get().then((value) {
+                    var userInfo = value.data();
+                    Navigator.pushNamed(context, 'profile', arguments: {
+                      'userInfo': userInfo,
+                    });
+                  });
                 },
                 child: Container(
                   width: screenSize.height * 0.035,

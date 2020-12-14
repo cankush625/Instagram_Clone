@@ -10,12 +10,15 @@ class Profile extends StatefulWidget {
 
 class _ProfileState extends State<Profile> {
   var fsconnect = FirebaseFirestore.instance;
+  Map data = {};
 
   @override
   Widget build(BuildContext context) {
+    data = data.isNotEmpty ? data : ModalRoute.of(context).settings.arguments;
     var screenSize = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         leading: Icon(
           Icons.add,
           color: Colors.black,
@@ -24,7 +27,7 @@ class _ProfileState extends State<Profile> {
         title: Row(
           children: <Widget>[
             Text(
-              'ankushchavan_',
+              data['userInfo']['username'],
               style: TextStyle(
                 color: Colors.black,
               ),
@@ -70,7 +73,7 @@ class _ProfileState extends State<Profile> {
                           ),
                           image: DecorationImage(
                             image: NetworkImage(
-                              'https://avatars1.githubusercontent.com/u/41515472?s=460&u=2e83d208268b51f32d5212de73328a501ecd4ce5&v=4',
+                              data['userInfo']['profilePictureUrl'],
                             ),
                             fit: BoxFit.cover,
                           ),
@@ -97,7 +100,7 @@ class _ProfileState extends State<Profile> {
                   Column(
                     children: <Widget>[
                       Text(
-                        '27',
+                        data['userInfo']['posts'],
                         style: TextStyle(
                           fontSize: screenSize.width * 0.047,
                           fontWeight: FontWeight.bold,
@@ -114,7 +117,7 @@ class _ProfileState extends State<Profile> {
                   Column(
                     children: <Widget>[
                       Text(
-                        '176',
+                        data['userInfo']['followers'],
                         style: TextStyle(
                           fontSize: screenSize.width * 0.047,
                           fontWeight: FontWeight.bold,
@@ -130,7 +133,7 @@ class _ProfileState extends State<Profile> {
                   ),Column(
                     children: <Widget>[
                       Text(
-                        '176',
+                        data['userInfo']['following'],
                         style: TextStyle(
                           fontSize: screenSize.width * 0.047,
                           fontWeight: FontWeight.bold,
@@ -155,23 +158,22 @@ class _ProfileState extends State<Profile> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       Text(
-                        'Ankush Chavan',
+                        data['userInfo']['name'],
                         style: TextStyle(
                           fontSize: screenSize.width * 0.04,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                       Text(
-                        'Personal Blog',
+                        data['userInfo']['acType'],
                         style: TextStyle(
                           fontSize: screenSize.width * 0.04,
                           color: Colors.grey,
                         ),
                       ),
                       Text(
-                        'Passionate Coder\n'
-                            'Artist 🎨\n'
-                            'Fitness Enthusiast',
+                        // todo: Bio is not rendering correctly from FireStore
+                        'Passionate Coder\nArtist 🎨\nFitness Enthusiast',
                         style: TextStyle(
                           fontSize: screenSize.width * 0.04,
                         ),
@@ -421,6 +423,72 @@ class _ProfileState extends State<Profile> {
               ),
             ),
           ],
+        ),
+      ),
+      bottomNavigationBar: Container(
+        height: screenSize.height * 0.065,
+        decoration: BoxDecoration(
+          border: Border(
+            top: BorderSide(
+              color: Colors.grey[300],
+              width: screenSize.width * 0.003,
+            ),
+          ),
+        ),
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: screenSize.width * 0.05),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              GestureDetector(
+                child: Icon(
+                  Icons.home,
+                  size: screenSize.width * 0.07,
+                ),
+                onTap: () {
+                  Navigator.pop(context);
+                  Navigator.pushNamed(context, '/');
+                },
+              ),
+              Icon(
+                Icons.search,
+                size: screenSize.width * 0.07,
+              ),
+              FaIcon(
+                FontAwesomeIcons.plusSquare,
+                size: screenSize.width * 0.06,
+              ),
+              FaIcon(
+                FontAwesomeIcons.heart,
+                size: screenSize.width * 0.06,
+              ),
+              GestureDetector(
+                onTap: () {
+                  fsconnect.collection('userProfile').doc("oQ5FBdRIQU2xqZwaXHmR").get().then((value) {
+                    var userInfo = value.data();
+                    Navigator.pop(context);
+                    Navigator.pushNamed(context, 'profile', arguments: {
+                      'userInfo': userInfo,
+                    });
+                  });
+                },
+                child: Container(
+                  width: screenSize.height * 0.035,
+                  height: screenSize.height * 0.035,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(screenSize.height * 0.07 / 2),
+                    image: DecorationImage(
+                      image: NetworkImage(
+                        data['userInfo']['profilePictureUrl'],
+                      ),
+                      fit: BoxFit.cover,
+                    ),
+                    color: Colors.orange,
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
