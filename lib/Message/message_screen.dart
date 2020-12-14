@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:ionicons/ionicons.dart';
-import 'package:outline_material_icons/outline_material_icons.dart';
 
 class Message extends StatefulWidget {
   @override
@@ -105,6 +102,7 @@ class _MessageState extends State<Message> {
             Row(
               children: <Widget>[
                 MaterialButton(
+                  onPressed: () {  },
                   child: Text(
                     'Primary',
                     style: TextStyle(
@@ -114,6 +112,7 @@ class _MessageState extends State<Message> {
                   ),
                 ),
                 MaterialButton(
+                  onPressed: () {  },
                   child: Text(
                     'General',
                     style: TextStyle(
@@ -266,7 +265,7 @@ class _MessageState extends State<Message> {
                         ),
                       ),
                       subtitle: Text(
-                        'Reacted to your story 🎉 . 6 w',
+                        'Reacted to your story🎉 . 6 w',
                         style: TextStyle(
                           fontSize: 17,
                           fontWeight: FontWeight.w400,
