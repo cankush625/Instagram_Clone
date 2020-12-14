@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 
 import 'package:instagram_clone/Home/home_screen.dart';
+import 'package:instagram_clone/Message/message_screen.dart';
 import 'package:instagram_clone/Profile/profile_screen.dart';
 
 void main() async {
@@ -19,6 +20,7 @@ class MyApp extends StatelessWidget {
       routes: {
         "/": (context) => Home(),
         "profile": (context) => Profile(),
+        "message": (context) => Message(),
       },
     );
   }

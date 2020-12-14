@@ -39,10 +39,15 @@ class _HomeState extends State<Home> {
           Center(
             child: Padding(
               padding: EdgeInsets.only(right: screenSize.width * 0.03),
-              child: FaIcon(
-                FontAwesomeIcons.facebookMessenger,
-                color: Colors.black,
-                size: 25,
+              child: GestureDetector(
+                child: FaIcon(
+                  FontAwesomeIcons.facebookMessenger,
+                  color: Colors.black,
+                  size: 25,
+                ),
+                onTap: () {
+                  Navigator.pushNamed(context, 'message');
+                },
               ),
             ),
           ),
@@ -131,7 +136,7 @@ class _HomeState extends State<Home> {
                                     ),
                                     image: DecorationImage(
                                       image: NetworkImage(
-                                        'https://avatars1.githubusercontent.com/u/41515472?s=460&u=2e83d208268b51f32d5212de73328a501ecd4ce5&v=4',
+                                        'https://github.com/cankush625/WhatsApp_Clone/raw/master/assets/images/profilePhotos/random1.png',
                                       ),
                                       fit: BoxFit.cover,
                                     ),
@@ -140,7 +145,7 @@ class _HomeState extends State<Home> {
                                 ),
                               ),
                               Text(
-                                'cankush625',
+                                'andrewsg54',
                                 style: TextStyle(
                                   fontSize: 14,
                                 ),
@@ -162,7 +167,7 @@ class _HomeState extends State<Home> {
                                     ),
                                     image: DecorationImage(
                                       image: NetworkImage(
-                                        'https://avatars1.githubusercontent.com/u/41515472?s=460&u=2e83d208268b51f32d5212de73328a501ecd4ce5&v=4',
+                                        'https://github.com/cankush625/WhatsApp_Clone/raw/master/assets/images/profilePhotos/random3.png',
                                       ),
                                       fit: BoxFit.cover,
                                     ),
@@ -171,7 +176,7 @@ class _HomeState extends State<Home> {
                                 ),
                               ),
                               Text(
-                                'Your story',
+                                'itsjames12',
                                 style: TextStyle(
                                   fontSize: 14,
                                 ),
@@ -193,7 +198,7 @@ class _HomeState extends State<Home> {
                                     ),
                                     image: DecorationImage(
                                       image: NetworkImage(
-                                        'https://avatars1.githubusercontent.com/u/41515472?s=460&u=2e83d208268b51f32d5212de73328a501ecd4ce5&v=4',
+                                        'https://github.com/cankush625/WhatsApp_Clone/raw/master/assets/images/profilePhotos/random5.png',
                                       ),
                                       fit: BoxFit.cover,
                                     ),
@@ -202,7 +207,7 @@ class _HomeState extends State<Home> {
                                 ),
                               ),
                               Text(
-                                'Your story',
+                                'realerica__',
                                 style: TextStyle(
                                   fontSize: 14,
                                 ),
@@ -224,7 +229,7 @@ class _HomeState extends State<Home> {
                                     ),
                                     image: DecorationImage(
                                       image: NetworkImage(
-                                        'https://avatars1.githubusercontent.com/u/41515472?s=460&u=2e83d208268b51f32d5212de73328a501ecd4ce5&v=4',
+                                        'https://github.com/cankush625/WhatsApp_Clone/raw/master/assets/images/profilePhotos/random4.png',
                                       ),
                                       fit: BoxFit.cover,
                                     ),
@@ -233,7 +238,7 @@ class _HomeState extends State<Home> {
                                 ),
                               ),
                               Text(
-                                'Your story',
+                                'official_lauren',
                                 style: TextStyle(
                                   fontSize: 14,
                                 ),
@@ -255,7 +260,7 @@ class _HomeState extends State<Home> {
                                     ),
                                     image: DecorationImage(
                                       image: NetworkImage(
-                                        'https://avatars1.githubusercontent.com/u/41515472?s=460&u=2e83d208268b51f32d5212de73328a501ecd4ce5&v=4',
+                                        'https://github.com/cankush625/WhatsApp_Clone/raw/master/assets/images/profilePhotos/random6.png',
                                       ),
                                       fit: BoxFit.cover,
                                     ),
@@ -264,7 +269,7 @@ class _HomeState extends State<Home> {
                                 ),
                               ),
                               Text(
-                                'Your story',
+                                'james2552',
                                 style: TextStyle(
                                   fontSize: 14,
                                 ),
@@ -486,6 +491,7 @@ class _HomeState extends State<Home> {
                 onTap: () {
                   fsconnect.collection('userProfile').doc("oQ5FBdRIQU2xqZwaXHmR").get().then((value) {
                     var userInfo = value.data();
+                    Navigator.pop(context);
                     Navigator.pushNamed(context, 'profile', arguments: {
                       'userInfo': userInfo,
                     });
