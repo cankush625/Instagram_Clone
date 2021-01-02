@@ -5,6 +5,10 @@
       <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/cloud_firestore-0.14.4" />
       <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core_web-0.2.1+1" />
       <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/cloud_firestore_web-0.2.1+2" />
+      <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_plugin_android_lifecycle-1.0.11" />
+      <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/image_picker-0.6.7+17" />
+      <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/camera-0.5.8+17" />
+      <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/tflite-1.1.1" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
