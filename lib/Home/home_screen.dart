@@ -22,9 +22,14 @@ class _HomeState extends State<Home> {
         automaticallyImplyLeading: false,
         title: Row(
           children: <Widget>[
-            Image.asset(
-              'assets/logo/instagram_camera_icon.jpg',
-              height: screenSize.height * 0.045,
+            GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, 'object_detection');
+              },
+              child: Image.asset(
+                'assets/logo/instagram_camera_icon.jpg',
+                height: screenSize.height * 0.045,
+              ),
             ),
             Padding(
               padding: EdgeInsets.fromLTRB(screenSize.height * 0.01, screenSize.height * 0.005, 0, 0),
