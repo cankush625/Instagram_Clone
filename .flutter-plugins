@@ -1,5 +1,9 @@
 # This is a generated file; do not edit or check into version control.
+camera=C:\\src\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\camera-0.5.8+17\\
 cloud_firestore=C:\\src\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\cloud_firestore-0.14.4\\
 cloud_firestore_web=C:\\src\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\cloud_firestore_web-0.2.1+2\\
 firebase_core=C:\\src\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\firebase_core-0.5.3\\
 firebase_core_web=C:\\src\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\firebase_core_web-0.2.1+1\\
+flutter_plugin_android_lifecycle=C:\\src\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\flutter_plugin_android_lifecycle-1.0.11\\
+image_picker=C:\\src\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\image_picker-0.6.7+17\\
+tflite=C:\\src\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\tflite-1.1.1\\
