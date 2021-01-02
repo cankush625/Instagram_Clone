@@ -226,6 +226,13 @@
             </list>
           </value>
         </entry>
+        <entry key="splashscreen">
+          <value>
+            <list>
+              <option value="C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/splashscreen-1.3.5/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="stack_trace">
           <value>
             <list>
@@ -313,6 +320,7 @@
       <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/plugin_platform_interface-1.0.3/lib" />
       <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/quiver-2.1.3/lib" />
       <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/source_span-1.7.0/lib" />
+      <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/splashscreen-1.3.5/lib" />
       <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/stack_trace-1.9.3/lib" />
       <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/stream_channel-2.0.0/lib" />
       <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/string_scanner-1.0.5/lib" />

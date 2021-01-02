@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 
+import 'package:instagram_clone/Home/splash_screen.dart';
 import 'package:instagram_clone/Home/home_screen.dart';
 import 'package:instagram_clone/Message/message_screen.dart';
 import 'package:instagram_clone/Profile/profile_screen.dart';
@@ -18,7 +19,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
       routes: {
-        "/": (context) => Home(),
+        "/": (context) => SplashScreen1(),
+        "home": (context) => Home(),
         "profile": (context) => Profile(),
         "message": (context) => Message(),
       },
