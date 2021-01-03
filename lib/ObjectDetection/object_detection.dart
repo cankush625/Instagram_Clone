@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'dart:io';
 import 'package:camera/camera.dart';
@@ -155,6 +156,27 @@ class _ObjectDetectionState extends State<ObjectDetection> {
             children: <Widget>[
               Stack(
                 children: stackChildren,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  MaterialButton(
+                    child: Text(
+                      'Open Camera Again',
+                    ),
+                    onPressed: () {
+                      getImageFromCamera();
+                    },
+                  ),
+                  MaterialButton(
+                    child: Text(
+                      'Image from Gallery',
+                    ),
+                    onPressed: () {
+                      getImageFromGallery();
+                    },
+                  ),
+                ],
               ),
             ],
           ),
