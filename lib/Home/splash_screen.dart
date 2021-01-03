@@ -12,7 +12,7 @@ class _SplashScreen1State extends State<SplashScreen1> {
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
     return new SplashScreen(
-        seconds: 5,
+        seconds: 3,
         image: new Image.asset(
           'assets/logo/instagram_logo.png',
           height: screenSize.height * 0.1,
