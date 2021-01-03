@@ -131,54 +131,41 @@ class _ObjectDetectionState extends State<ObjectDetection> {
     }
 
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        title: Row(
-          children: <Widget>[
-            GestureDetector(
-              onTap: () {
-                Navigator.pop(context);
-              },
-              child: Icon(
-                Icons.arrow_back_ios,
-                color: Colors.black,
-                size: screenSize.width * 0.06,
-              ),
-            ),
-          ],
-        ),
-        backgroundColor: Colors.white,
-      ),
-      body: Container(
-        child:Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Stack(
-                children: stackChildren,
-              ),
-              Row(
+      body: SafeArea(
+        child: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: Container(
+            child: Center(
+              child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  MaterialButton(
-                    child: Text(
-                      'Open Camera Again',
-                    ),
-                    onPressed: () {
-                      getImageFromCamera();
-                    },
+                  Stack(
+                    children: stackChildren,
                   ),
-                  MaterialButton(
-                    child: Text(
-                      'Image from Gallery',
-                    ),
-                    onPressed: () {
-                      getImageFromGallery();
-                    },
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      MaterialButton(
+                        child: Text(
+                          'Open Camera Again',
+                        ),
+                        onPressed: () {
+                          getImageFromCamera();
+                        },
+                      ),
+                      MaterialButton(
+                        child: Text(
+                          'Image from Gallery',
+                        ),
+                        onPressed: () {
+                          getImageFromGallery();
+                        },
+                      ),
+                    ],
                   ),
                 ],
               ),
-            ],
+            ),
           ),
         ),
       ),
@@ -187,8 +174,6 @@ class _ObjectDetectionState extends State<ObjectDetection> {
   Future getImageFromCamera() async {
     final pickedFile = await imagePicker.getImage(
       source: ImageSource.camera,
-      maxWidth: screenSize.width,
-      maxHeight: screenSize.height * 0.7,
     );
 
     setState(() {
