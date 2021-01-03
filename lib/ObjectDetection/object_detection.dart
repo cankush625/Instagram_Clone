@@ -72,7 +72,7 @@ class _ObjectDetectionState extends State<ObjectDetection> {
     double factorX = screen.width;
     double factorY = _imageHeight / _imageHeight * screen.width;
 
-    Color blue = Colors.blue;
+    Color pink = Colors.pinkAccent[700];
 
     return _recognitions.map((re) {
       return Container(
@@ -84,14 +84,14 @@ class _ObjectDetectionState extends State<ObjectDetection> {
           child: ((re["confidenceInClass"] > 0.50))? Container(
             decoration: BoxDecoration(
                 border: Border.all(
-                  color: blue,
+                  color: pink,
                   width: 3,
                 )
             ),
             child: Text(
               "${re["detectedClass"]} ${(re["confidenceInClass"] * 100).toStringAsFixed(0)}%",
               style: TextStyle(
-                background: Paint()..color = blue,
+                background: Paint()..color = pink,
                 color: Colors.white,
                 fontSize: 15,
               ),
