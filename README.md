@@ -12,3 +12,5 @@ This is the clone of instagram mobile app
 ![alt text](thumbnails/profile_screen.jpg)
 ### Message Screen
 ![alt text](thumbnails/message_screen.jpg)
+### Object Detection
+![alt text](thumbnails/object_detection.jpg)
